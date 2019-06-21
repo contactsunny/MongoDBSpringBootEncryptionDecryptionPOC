@@ -1,4 +1,4 @@
-package com.contactsunny.poc.MongoDBSpringBootCascadingPOC.utils;
+package com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.utils;
 
 import org.jasypt.util.text.BasicTextEncryptor;
 import org.springframework.stereotype.Component;

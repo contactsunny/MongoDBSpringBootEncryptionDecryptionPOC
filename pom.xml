@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.contactsunny.poc</groupId>
-    <artifactId>MongoDBSpringBootCascadingPOC</artifactId>
+    <artifactId>MongoDBSpringBootEncryptionDecryptionPOC</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>MongoDBSpringBootCascadingPOC</name>
+    <name>MongoDBSpringBootEncryptionDecryptionPOC</name>
     <url>https://blog.contactsunny.com</url>
     <parent>
         <groupId>org.springframework.boot</groupId>

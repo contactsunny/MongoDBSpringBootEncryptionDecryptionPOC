@@ -1,4 +1,4 @@
-package com.contactsunny.poc.MongoDBSpringBootCascadingPOC.models;
+package com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
