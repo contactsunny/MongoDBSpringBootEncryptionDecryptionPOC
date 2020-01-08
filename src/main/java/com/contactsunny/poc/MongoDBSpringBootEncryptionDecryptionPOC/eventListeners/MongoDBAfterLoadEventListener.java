@@ -30,10 +30,10 @@ public class MongoDBAfterLoadEventListener extends AbstractMongoEventListener<Ob
         * The '_class' field is a meta-data field added by SpringBoot which really is not very important in terms of
             being encrypted or not.
          */
-        List<String> keysNotToEncrypt = Arrays.asList("_class", "_id");
+        List<String> keysNotToDecrypt = Arrays.asList("_class", "_id");
 
         for ( String key : eventObject.keySet() ) {
-            if (!keysNotToEncrypt.contains(key)) {
+            if (!keysNotToDecrypt.contains(key)) {
                 eventObject.put(key, this.encryptionUtil.decrypt(eventObject.get(key).toString()));
             }
         }

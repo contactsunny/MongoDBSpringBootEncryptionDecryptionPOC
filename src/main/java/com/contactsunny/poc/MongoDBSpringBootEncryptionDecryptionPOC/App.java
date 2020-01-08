@@ -2,8 +2,8 @@ package com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC;
 
 import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.eventListeners.MongoDBAfterLoadEventListener;
 import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.eventListeners.MongoDBBeforeSaveEventListener;
-import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.models.CascadingPOC;
-import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.repositories.CascadingPOCRepository;
+import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.models.Sample;
+import com.contactsunny.poc.MongoDBSpringBootEncryptionDecryptionPOC.repositories.SampleRepository;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class App implements CommandLineRunner {
 
     @Autowired
-    private CascadingPOCRepository cascadingPOCRepository;
+    private SampleRepository sampleRepository;
 
     private static Logger logger = LogManager.getLogger(App.class);
 
@@ -52,15 +52,15 @@ public class App implements CommandLineRunner {
 
         long timeStamp = System.currentTimeMillis();
 
-        CascadingPOC cascadingPOC = new CascadingPOC();
-        cascadingPOC.setName("Test name - " + timeStamp);
-        cascadingPOC.setDescription("Test description - " + timeStamp);
+        Sample sample = new Sample();
+        sample.setName("Test name - " + timeStamp);
+        sample.setDescription("Test description - " + timeStamp);
 
-        cascadingPOC = cascadingPOCRepository.save(cascadingPOC);
+        sample = sampleRepository.save(sample);
 
-        logger.info("ID of saved object: " + cascadingPOC.getId());
+        logger.info("ID of saved object: " + sample.getId());
 
-        Optional<CascadingPOC> fetchedObject = cascadingPOCRepository.findById(cascadingPOC.getId());
+        Optional<Sample> fetchedObject = sampleRepository.findById(sample.getId());
 
         logger.info("Fetched object: " + new Gson().toJson(fetchedObject.get()));
     }

@@ -11,7 +11,7 @@ public class EncryptionUtil {
     public EncryptionUtil() {
 
         textEncryptor = new BasicTextEncryptor();
-        textEncryptor.setPassword("some-random-passwprd");
+        textEncryptor.setPassword("some-random-password");
     }
 
 
